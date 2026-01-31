@@ -13,17 +13,19 @@ function getRandomHexColor() {
 
 control.addEventListener("click", (event) => {
     if (event.target.hasAttribute("data-create")) {
-        boxes.innerHTML = "";
-        value = 30
-        for (let i = 0; i < Number(number.value); i++) {
-            const div = document.createElement("div");
-            div.style.width = `${value}px`
-            div.style.height = `${value}px`
-            div.style.backgroundColor = getRandomHexColor();
-            value += 10;
-            boxes.append(div);
+        if (number.value < 101) {
+            boxes.innerHTML = "";
+            value = 30
+            for (let i = 0; i < Number(number.value); i++) {
+                const div = document.createElement("div");
+                div.style.width = `${value}px`
+                div.style.height = `${value}px`
+                div.style.backgroundColor = getRandomHexColor();
+                value += 10;
+                boxes.append(div);
+            }
+            number.value = "";
         }
-        number.value = "";
     }
 
     if (event.target.hasAttribute("data-destroy")) {

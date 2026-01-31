@@ -16,6 +16,7 @@ form.addEventListener("submit", (event) => {
       email: email.value.trim(),
       password: password.value.trim(),
     };
+    console.log(values);
     form.reset();
   }
 });
